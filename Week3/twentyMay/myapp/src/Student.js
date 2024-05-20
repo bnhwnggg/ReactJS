@@ -23,8 +23,8 @@ export default function Student(){
     return(
         <>
         {
-        listStudent.map((student,i) => (
-            <p key={i}>ID: {student.id} - {student.name} - Score: {student.score} - Age: {student.age}
+        listStudent.map(e => (
+            <p>ID: {e.id} - {e.name} - Score: {e.score} - Age: {e.age}
             </p>
         ))
         }
