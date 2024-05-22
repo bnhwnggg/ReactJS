@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import Student from './Student';
 import CComponent from './CComponent ';
+import Product from './Product';
 
 function App() {
   return (
     <div className="App">
-      <Student></Student>
-      <CComponent></CComponent>
+      <Product></Product>
     </div>
   );
 }

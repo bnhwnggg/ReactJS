@@ -6,7 +6,7 @@ let listStudent = [
         age: 22,
     },
     {
-        id: 2, 
+        id: 2,
         name: 'Ngoc Hung Bui 2',
         score: 20,
         age: 222,
@@ -19,15 +19,15 @@ let listStudent = [
     }
 ]
 
-export default function Student(){
-    return(
+export default function Student() {
+    return (
         <>
-        {
-        listStudent.map(e => (
-            <p>ID: {e.id} - {e.name} - Score: {e.score} - Age: {e.age}
-            </p>
-        ))
-        }
+            {
+                listStudent.map(e => (
+                    <p>ID: {e.id} - {e.name} - Score: {e.score} - Age: {e.age}
+                    </p>
+                ))
+            }
         </>
     )
 }
