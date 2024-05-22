@@ -3,24 +3,43 @@ class CComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            x: 0,
-            y: 20,
+            list: [
+                { name: "A", age: "20" },
+                { name: "B", age: "30" },
+            ],
+            inpName: "",
+            inpAge: "",
         }
     }
 
-    upX = () => {
-        this.setState({x: this.state.x + 1});
-    };
+    add = () => {
+        this.state.list.push({ 
+            name: this.state.inpName, 
+            age: this.state.inpAge,
+        });
+        this.setState({ 
+            list: this.state.list,
+        });
+    }
 
-    upY = () => {
-        this.setState({ y: this.state.y + 1 });
-    };
     render() {
         return (
             <>
-                <h2>CCompoennt Demo{this.state.x}, {this.state.y}</h2>
-                <button onClick={this.upX}>Tang X</button>
-                <button onClick={this.upY}>Tang y</button>
+                <h2>CCompoennt Demo {this.state.inpName}, {this.state.inpAge} {""}</h2>
+                {this.state.list.map((e) => (
+                    <h3>
+                        {e.name}, {e.age}
+                    </h3>
+                ))}
+
+                <input type="text" onChange={(e) => {
+                    this.setState({ inpName: e.target.value });
+                }} />
+                <input type="text" onChange={(e) => {
+                    this.setState({ inpAge: e.target.value });
+                }} />
+
+                <button onClick={() => {this.add()}}>Create</button>
             </>
         );
     }
